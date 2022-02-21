@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .tb {
+            background-color: yellow;
+        }
+        .tr {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+<table class="tb" border="1">
+    <tr>
+        <th colspan="5" class="tr">
+            ĐĂNG KÝ HỌC VIÊN
+        </th>
+    </tr>
+    <tr>
+        <tr>
+            <td>Họ và tên</td>
+            <td colspan="2"><input type="text" size="40"></td>
+        </tr>
+        <tr>
+            <td>Ngày sinh</td>
+            <td colspan="2"><input type="text" size="20"></td>
+        </tr>
+    </tr>
+    <tr class="tb">
+        <td>Giới tính</td>
+        <td><input type="radio" id="male" name="gender" value="male">Nam <input type="radio" id="female" name="gender" value="female">Nữ</td>
+
+    </tr>
+    <tr>
+        <td >Địa chỉ</td>
+        <td colspan="2" ><textarea cols="25" rows="4"></textarea></td>
+    </tr>
+    <tr>
+        <td >Lớp</td>
+        <td colspan="2" ><select name="lớp">
+            <option value="lớp A"> Lớp A</option>
+            <option value="lớp B"> Lớp B</option>
+            <option value="lớp C"> Lớp C</option>
+            <option value="lớp D"> Lớp D</option>
+        </select>
+        </td>
+    </tr>
+    <tr>
+        <td >Email</td>
+        <td colspan="2"><input type="text" size="20"></td>
+    </tr>
+    <tr>
+        <td >Điện thoại</td>
+        <td colspan="2"><input type="text" size="20"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td colspan="2">
+            <button type="button" >
+                Gửi thông tin
+            </button>
+            <button type="button" >
+                Nhập lại
+            </button>
+        </td>
+    </tr>
+
+</table>
+
+</body>
+
+</html>
