@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT1</title>
+</head>
+<style>
+    .tb1{
+        display: inline-block;
+        padding-left: 90px;
+        line-height: 0.25px;
+    }
+    .tb2{
+        display: inline-block;
+        padding-left: 90px;
+        line-height: 0.25px;
+    }
+    .tb3{
+        display: inline-block;
+        padding-left: 40px;
+        line-height: 0.25px;
+    }
+</style>
+<body>
+<h3 class="tb1"> Amount</h3>
+<h3 class="tb2"> From Currency</h3>
+<h3 class="tb3"> To Currency</h3>
+<br>
+
+<input type="text" style="height: 25px; width: 200px;" id="dauvao">
+<select name="" id="select1" style="height: 30px; width: 100px;margin-left: 50px"" >
+    <option value="a">VND</option>
+    <option value="b">USD</option>
+</select>
+<span ></span>
+<select name="" id="select2" style="height: 30px; width: 100px; margin-left: 50px" >
+    <option value="a">VND</option>
+    <option value="b">USD</option>
+</select>
+<button onclick="lamgido()" style="height: 32px; width: 100px; margin-left: 50px" >Convert</button>
+<script>
+    function lamgido() {
+        let giatrivao = document.getElementById("dauvao").value;
+        let select1 = document.getElementById("select1").value;
+        let select2 = document.getElementById("select2").value;
+
+
+        if (select1 == select2) {
+            document.write("Result :"+giatrivao );
+        }
+        if (select1 == "a" && select2 == "b" && select1 != select2){
+            document.write("Result :"+giatrivao/23000+" "+"USD" );
+
+        }
+        if (select1 == "b" && select2 == "a" && select1 != select2) {
+            document.write("Result :"+giatrivao*23000+" "+"USD");
+
+        }
+
+
+
+    }
+</script>
+
+
+
+</body>
+</html>
