@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CAULENHSC</title>
+</head>
+<body>
+<div class="tinhngay">
+    <h3 id="text"  id="result1">Ô Tính</h3>
+    <input type="text" id="ngay" placeholder="Nhập vào số tháng">
+    <button onclick="result()" >Tính số ngày</button>
+    <div id="result" onclick="func()" > Kết quả là </div>
+</div>
+</body>
+</html>
+<script>
+    function func()
+    {
+        document.getElementById("text").style.color="red";
+        document.getElementById("text").style.font="calibri";
+    }
+    function result () {
+        let songay = +document.getElementById("ngay").value;
+        switch (songay) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.getElementById('result').innerHTML = 'Tháng '+ songay + ' có 31 ngày';
+                break;
+            case 2:
+                document.getElementById('result').innerHTML = 'Tháng 2 có 28 hoặc 29 ngày';
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                document.getElementById('result').innerHTML = 'Tháng '+ songay + ' có 30 ngày';
+                break;
+        }
+    }
+</script>
+
+
+
+

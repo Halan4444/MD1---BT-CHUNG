@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinhChiSoCanNang</title>
+</head>
+<body>
+<div class="container">
+    <h1>Bảng Tính BMI</h1>
+    <p contenteditable="">Chiều cao (tính bằng cm) </p>
+    <input type="text" id="height" placeholder="Chiều Cao">
+    <p>Cân nặng (tính bằng kg) </p>
+    <input type="text" id="weight" placeholder="Cân Nặng">
+    <button onclick="result()" >Tính</button>
+    <div id="result"></div>
+</div>
+</body>
+</html>
+<!---if (bmi < 18)
+document.write("Underweight");
+else if (bmi < 25.0)
+document.write("Normal");
+else if (bmi < 30.0)
+document.write("Overweight");
+else
+document.write("Obese"); -->
+
+<script>
+    var height1 = document.getElementById('height');
+    var weight1 = document.getElementById('weight');
+    var cal = document.getElementById('cal');
+
+    function calculate(height, weight) {
+        if(height <= 0 || weight <= 0) {
+            alert('No Calculate');
+        }
+        height = height/100;
+        let bmi = weight/Math.pow(height,2);
+        return bmi;
+    }
+
+    function result() {
+        var height = height1.value;
+        var weight = weight1.value;
+        var bmi = calculate(height, weight);
+        if (bmi < 18) {
+            document.write("Underweight");
+        } else if (bmi >= 18 && bmi < 25) {
+            document.write("Normal");
+        } else if (bmi >= 25 && bmi < 30) {
+            document.write("Overweight");
+        } else {
+            document.write("Obese");
+        }
+
+    }
+</script>
