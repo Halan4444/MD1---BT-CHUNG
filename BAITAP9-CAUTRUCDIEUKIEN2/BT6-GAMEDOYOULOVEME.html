@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0 " >
+    <title>GAMEDOYOULOVEME</title>
+</head>
+<style>
+    h1 {
+        text-align: center;
+    }
+     #b {
+        display: inline-block;
+        margin-left: 40%;
+    }
+     #a {
+         position:absolute;
+         left:360px;
+         top:auto;
+     }
+</style>
+<body>
+<h1> Do you love me? </h1>
+<div class="but">
+    <button id="b" onclick="Yes()" style="margin-right: 40px"> Yes </button>
+    <input id="a" type="button" value= " No " onmouseover="No()">
+</div>
+</body>
+</html>
+<script>
+    function Yes() {
+        alert("You are right <3 ");
+    }
+    function No() {
+        let x = Math.round((Math.random()*window.innerWidth));
+        let y = Math.round((Math.random()*window.innerHeight));
+        document.getElementById('a').style.left = x +"px"
+        document.getElementById('a').style.top = y +"px"
+
+    }
+
+
+</script>

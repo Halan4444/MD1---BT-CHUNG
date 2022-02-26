@@ -9,11 +9,17 @@
     Click on text to change
 </p>
 <script>
-    function func()
-    {
-        document.getElementById("text").style.color="red";
-        document.getElementById("text").style.font="calibri";
+    var Images = {
+        imgsDB: // nhập ảnh từ file img
+            [
+                ["Cat 1.jpg", "Cat 2.jpg", "Cat 3.jpg", "Cat 4.jpg", "Cat 5.jpg"],
+                ["Gau 1.jpg", "Gau 2.jpg", "Gau 3.jpg", "Gau 4.jpg", "Gau 5.jpg"],
+                ["Khi 1.jpg", "Khi 2.jpg", "Khi 3.jpg", "Khi 4.jpg", "Khi 5.jpg"]
+            ],
+        imgpos: [0, 0, 1, 0, 0]
     }
+
+    alert(Images.imgpos[2])
 </script>
 
 
