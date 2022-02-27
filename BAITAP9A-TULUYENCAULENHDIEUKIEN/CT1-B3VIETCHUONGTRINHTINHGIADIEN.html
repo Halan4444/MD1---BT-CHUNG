@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Luyện tập cấu trúc điều kiện 02*</title>
+</head>
+<body>
+<p><b>Bài 10 :</b>Viết chương trình tính giá điện.</p>
+<label for="Price">Electricity Sum: </label><input type="text" size="10px" id="Price">
+<input type="button" value="Calculate" onclick="CalElectric()">
+<p id="result1">Result: </p>
+<hr>
+<p><b>Bài 11 :</b>Viết chương trình tính thuế thu nhập cá nhân:</p>
+<label for="Salary">Salary: </label><input type="text" size="20px" id="Salary" placeholder="Lương tính bằng triệu đồng">
+<input type="button" value="Calculate" onclick="CalTax()">
+<p id="result2">Result: </p>
+<hr>
+<p><b>Bài 12 :</b>Viết chương trình tính lãi ngân hàng.</p>
+<label for="Capital">Capital: </label><input type="text" size="10px" id="Capital"> <br><br>
+<label for="Bankinterest">Interest: </label><input type="text" size="10px" id="Bankinterest">
+<label for="Month">Months: </label><input type="text" size="10px" id="Month">
+<input style="margin-left: 10px" type="button" value="Calculate" onclick="Bankcal()">
+<p id="result3">Result :</p>
+<hr>
+</body>
+</html>
+<script>
+    function CalElectric() {
+        let a = document.getElementById("Price").value;
+        let res = document.getElementById("result1");
+        let bac1=1678; bac2=1734; bac3=2014; bac4=2536; bac5=2834;
+        if (isNaN(a)||(a<0)) {
+            res.innerHTML = 'Input must be a number'
+            res.style.color = 'red'
+        }else {
+            if (a<=50) {
+                res.innerHTML = `Result: ${a*bac1} VND`;
+            }else if (a<=100) {
+                res.innerHTML = `Result: ${a*bac2} VND`;
+            }else if (a<=200) {
+                res.innerHTML = `Result: ${a*bac3} VND`;
+            }else if (a<=300) {
+                res.innerHTML = `Result: ${a*bac4} VND`;
+            }else if (a>300) {
+                res.innerHTML = `Result: ${a*bac5} VND`;
+            }
+        }
+    }
+    function CalTax() {
+        let s = document.getElementById("Salary").value;
+        console.log(s)
+        let res = document.getElementById("result2");
+        console.log(res)
+        let taxrate1 = parseFloat(0.05); taxrate2=parseFloat(0.10);taxrate3=parseFloat(0.15);taxrate4=parseFloat(0.25);
+        if (isNaN(s)) {
+            res.innerHTML = `Input must be a number`
+        } else {
+            if (s<7) {
+                res.innerHTML = `Result: ${(s*taxrate1).toFixed(2)} Triệu VND`;
+            }else if (s<15) {
+                res.innerHTML = `Result: ${(s*taxrate2).toFixed(2)} Triệu VND`;
+            }else if (s<25) {
+                res.innerHTML = `Result: ${(s * taxrate3).toFixed(2)} Triệu VND`;
+            }else if (s>25) {
+                    res.innerHTML = `Result: ${(s*taxrate4).toFixed(2)} Triệu VND`;
+        }
+    }
+    }
+    function Bankcal() {
+        let b = +document.getElementById("Capital").value;
+        let res = document.getElementById("result3");
+        let i = parseFloat(document.getElementById("Bankinterest").value);
+        let m = +document.getElementById("Month").value;
+        if (isNaN(b)||isNaN(i)||isNaN(m) ) {
+            res.innerHTML = `Input must be a number`
+            res.style.color = 'Red'
+        }else {
+            res.innerHTML = `Result lãi kép: ${b*(1+(i/(100*12))*m)} VND `
+        }
+
+    }
+
+</script>
