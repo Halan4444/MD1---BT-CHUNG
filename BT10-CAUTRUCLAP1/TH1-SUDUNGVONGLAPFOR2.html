@@ -9,11 +9,12 @@
 </body>
 </html>
 <script>
-    let num = prompt("Enter your number: ");
+    let a = +prompt("Nhập vào số a: ");
+    let b = +prompt("Nhập vào số a: ");
     let total = 0;
-    let i = 1;
-    for (; i <= num; i++) {
-        total = total + i;
+    for (; a <= b ;) {
+        total = total + a;
+        a++;
     }
-    alert(total);
+    document.write("Tổng dãy số là: "+total)
 </script>
