@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>B6</title>
+</head>
+<body>
+<script>
+    var c = +prompt("Nhập vào kích thước n<20",'');
+    for (var a=0;a<c;a++) {
+        for (var b=0;b<=4*c;b++) {
+            var d = parseInt(Math.sqrt(Math.pow(a-c,2)+Math.pow(b-c,2)));
+            var e = parseInt(Math.sqrt(Math.pow(a-c,2)+Math.pow(b-3*c,2)));
+            if (d<c +0.5 || e<c+0.5) {
+                document.write(`*`)
+            } else {
+                document.write(`&nbsp&nbsp`)
+            }
+        }document.write(`<br>`);
+    } for (var a=1; a<=2*c;a++) {
+        for (var b=0;b<a;b++) {
+            document.write(`&nbsp&nbsp`);
+        }for (var b=0; b<4*c+1-2*a;b++) {
+            document.write(`*`);
+        }document.write(`<br>`);
+    }
+
+</script>
+</body>
+</html>

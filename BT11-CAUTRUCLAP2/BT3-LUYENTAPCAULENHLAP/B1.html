@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>B1</title>
+</head>
+<body>
+<h1 id = "result" style="text-align:center"></h1>
+</body>
+</html>
+<script>
+  var res = document.getElementById("result");
+  function count100 () {
+    let i = 0;
+    let count= setInterval(()=>{
+      res.innerHTML = `${i}` ;
+      i++;
+      if (i==100) {
+        clearInterval(count);
+        alert('Done');
+      }
+    },100)
+  } count100()
+</script>

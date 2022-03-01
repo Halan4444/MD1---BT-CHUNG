@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT2-HIENTHICACSONGUYENTODAUTIEN</title>
+</head>
+<body>
+<script>
+    function checkPrimeNumber (n) {
+        if (n<2) {
+            return false;
+        } else if (n==2) {
+            return true ;
+        } else if (n%2==0) {
+            return false;
+        } else {
+            for (i=3; i<= Math.sqrt(n);i++) {
+                if (n%i==0) {
+                    return false;
+                    break;
+                }
+            }
+        } return true;
+    }
+var n = prompt("Nhập vào số nguyên tố muốn in ra");
+var count = 0;
+var number = 2;
+var result = "";
+while (count<n) {
+    if (checkPrimeNumber(number)) {
+        count++
+        result = result + `<span>${number} ;</span>`
+    } number+=1
+} document.write(result);
+</script>
+</body>
+</html>
