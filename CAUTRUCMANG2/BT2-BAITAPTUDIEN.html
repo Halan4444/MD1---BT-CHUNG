@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BTTUDIEN</title>
+</head>
+<body>
+<h2>Dictionary</h2>
+<label for="en">En :</label>
+<input type="text" value="" id="en">
+<input type="button" value="Translate" onclick="trans()">
+<h1 id="result"><br></h1>
+<script>
+    let res = document.getElementById("result");
+    function trans() {
+        let input = document.getElementById("en").value;
+        let EN = ["dog", "cat", "mouse","horse","bat","spider"]
+        let VN = ["chó", "mèo", "chuột","ngựa","dơi","nhện"]
+        for (let i=0;i<EN.length;i++) {
+            if (input == EN[i]) {
+                res.innerHTML =`${input} : ${VN[i]}`
+                break;
+            } else {
+                res.innerHTML = "No Data";
+            }
+        }
+    }
+</script>
+</body>
+</html>
