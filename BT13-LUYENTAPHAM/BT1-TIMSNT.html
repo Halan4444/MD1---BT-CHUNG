@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TIMSNT</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function checkPrimeNumber (n) {
+        let flag = true;
+        if (n < 2) {
+            flag = false;
+        } else if (n==2) {
+            flag = true ;
+        } else {
+            for (i=3;i<Math.sqrt(n);i++) {
+                if (n%i==0) {
+                    flag = false;
+                } else {
+                    flag = true;
+                }
+            }
+        }
+        if (flag==true){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    let a = +prompt("Nhập và 1 số nguyên","");
+    document.write(checkPrimeNumber(a));
+    document.write(`<br>`);
+    document.innerHTML = "<br>";
+    function printPrime() {
+        let i=2;
+        while (i<100){
+            if (checkPrimeNumber(i)==true){
+                document.write(i+" ");
+            } i++;
+        }
+    }
+    printPrime()
+
+
+
+</script>

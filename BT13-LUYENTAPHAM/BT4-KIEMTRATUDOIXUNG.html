@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT4-KIEMTRATUDOIXUNG</title>
+</head>
+<body>
+<script>
+    var text = prompt("Nhập chuỗi muốn kiểm tra: ");
+    function isPalindrome(txt){
+        for(var i = 0; i < parseInt(txt.length)/2; i++){
+            if(txt[i] != txt[text.length -i - 1])
+                return false ;
+        }
+        return true;
+    }
+    if (isPalindrome(text)) {
+        document.write("This is Palindrome")
+    } else {
+        document.write("This is not Palindrome")
+    }
+</script>
+</body>
+</html>
