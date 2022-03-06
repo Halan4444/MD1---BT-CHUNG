@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Luyện tập tạo và sử dụng hàm 01</title>
+</head>
+
+<body>
+<!-- bài 1 -->
+
+<!-- <script>
+    alertMessage()
+    function alertMessage() {
+        alert("Xin chào mọi người !!!");
+    }
+</script> -->
+
+
+<!-- Bài 2 -->
+
+
+<!-- <script>-->
+<!--    uptoNumber(10)-->
+<!--    function uptoNumber(a){-->
+<!--        a++;-->
+<!--        document.write(a);-->
+<!--    }-->
+<!--</script> -->
+
+
+
+<!-- bài 3 -->
+
+<!--<script>-->
+<!--    var c = +prompt("Nhập vào số a");-->
+<!--    var d = +prompt("Nhập vào số b");-->
+<!--    numberMath(c,d);-->
+<!--    function numberMath(a,b){-->
+<!--        let total = 0;-->
+<!--        if( a > b){-->
+<!--            alert(`${a} lớn hơn ${b}`);-->
+<!--        }else{-->
+<!--            total = a + b;-->
+<!--            alert(total);-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+
+
+<!-- bài 4 -->
+<!--<script>
+    function addNumbers() {
+        firstNum = 4;
+        secondNum = 8;
+        result = firstNum + secondNum;
+        return result;
+    }
+    result = 0;
+    alert(result);
+    result = addNumbers();
+    alert(result);
+
+</script>
+-->
+
+
+<!--&lt;!&ndash; bài 5 &ndash;&gt;-->
+
+<script>
+
+    // var value = prompt("Nhập vào tên ngôi sao: ");
+    // findStarOfLong(value)
+    // function findStarOfLong(value) {
+    //     var Ngoisao = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    //     var ChomSao = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+    //     var ishave = true;
+    //     for (let i = 0; i < Ngoisao.length; i++) {
+    //         if (value == Ngoisao[i]) {
+    //             document.write(`${Ngoisao[i]} có chòm sao là ${ChomSao[i]}`);
+    //             ishave = true;
+    //             break;
+    //         }
+    //         ishave = false;
+    //     }
+    //     if (!ishave) {
+    //         document.write(`${value} không tồn tại`)
+    //     }
+    // }
+    var value = prompt("Nhập vào tên ngôi sao: ");
+    findStarOfLong(value);
+    function findStarOfLong(value) {
+        var Ngoisao = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        var ChomSao = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+        var ishave = true;
+        for (let i=0; i<Ngoisao.length; i++) {
+            if (value == Ngoisao[i]) {
+                document.write(`${Ngoisao[i]} có chòm sao là ${ChomSao[i]}`);
+                ishave = true;
+                break;
+            } if (!ihave) {
+                document.write(`${value} không tồn tại`);
+            }
+        }
+    }
+
+
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT3-UDQLSDSANPHAM2</title>
+    <link rel="stylesheet" href="style.css"  >
+</head>
+<body>
+<h1>Add New Product</h1>
+
+<div class="container">
+    <form action="javascript:void(0);" method="POST" >
+        <input type="text" id="newProductAdd" placeholder="New Product">
+        <input type="submit" value="Add" onclick="addNewProduct()" >
+    </form>
+</div>
+<h3>Display All Product</h3>
+<table id="productDisplay" border="0">
+</table>
+<div id="formEdit"></div>
+<script>
+    //this.el = document.getElementById('products');
+    //var productList = ['Sony Xperia', 'Samsung Galaxy', 'Nokia 6', 'Xiaomi Redmi Note 4', 'Apple iPhone 6S', 'Xiaomi Mi 5s Plus', 'Apple iPhone 8 Plus', 'Fujitsu F-04E', 'Oppo A71'];;
+    var productList = ['Sony Xperia', 'Samsung Galaxy', 'Nokia 6', 'Xiaomi Redmi Note 4', 'Apple iPhone 6S', 'Xiaomi Mi 5s Plus', 'Apple iPhone 8 Plus', 'Fujitsu F-04E', 'Oppo A71'];
+    productDisplay()
+    function productDisplay() {
+        var productDisplay =
+            `
+        <tr>
+            <th>PRODUCT NAME</th>
+            <th>SL</th>
+            <th style="color: brown">${productList.length}</th>
+        </tr>
+        `
+        for (let i = 0; i < productList.length; i++) {
+            productDisplay +=
+                `
+            <tr>
+                <td>${productList[i]}</td>
+                <td><button onclick = "showFormEdit(${i})">EDIT</button></td>
+                <td><button onclick = "deleteProduct(${i})">DELETE</button></td>
+            </tr>
+            `
+        }
+        document.getElementById("productDisplay").innerHTML = productDisplay;
+    }
+
+    function addNewProduct() {
+        var newProduct = document.getElementById("newProductAdd").value;
+        productList.push(newProduct);
+        console.log(productList);
+        productDisplay()
+        document.getElementById("newProductAdd").value = '';
+    }
+    function deleteProduct(index) {
+        productList.splice(index, 1);
+        productDisplay()
+    }
+    function showFormEdit(index) {
+        var formEdit = '';
+        formEdit =
+            `
+            <input id ="newNameProduct" type = "text" value = "${productList[index]}">
+            <button onclick = "saveNewProductName(${index})">save</button>
+            `
+        document.getElementById("formEdit").innerHTML = formEdit;
+    }
+    function saveNewProductName(index) {
+        productList[index] = document.getElementById("newNameProduct").value;
+        productDisplay()
+        document.getElementById("formEdit").innerHTML = '';
+    }
+
+
+</script>
+
+
+</body>
+
+</html>
