@@ -11,6 +11,7 @@
 <h1>Add New Product</h1>
 
 <div class="container">
+    <span type="text" id="Caution" style="color: red"></span>
     <form action="javascript:void(0);" method="POST" >
         <input type="text" id="newProductAdd" placeholder="New Product">
         <input type="submit" value="Add" onclick="addNewProduct()" >
@@ -20,6 +21,8 @@
 <table id="productDisplay" border="0">
 </table>
 <div id="formEdit"></div>
+<input type="text" id="Search" placeholder="Search Product" oninput="actionSearch()">
+
 <script>
     //this.el = document.getElementById('products');
     //var productList = ['Sony Xperia', 'Samsung Galaxy', 'Nokia 6', 'Xiaomi Redmi Note 4', 'Apple iPhone 6S', 'Xiaomi Mi 5s Plus', 'Apple iPhone 8 Plus', 'Fujitsu F-04E', 'Oppo A71'];;
@@ -49,10 +52,17 @@
 
     function addNewProduct() {
         var newProduct = document.getElementById("newProductAdd").value;
-        productList.push(newProduct);
-        console.log(productList);
-        productDisplay()
-        document.getElementById("newProductAdd").value = '';
+        if (newProduct === ''){
+            document.getElementById("Caution").innerHTML =`The name is required! Please try again! `
+            return;
+        }else {
+            productList.push(newProduct);
+            console.log(productList);
+            productDisplay()
+            document.getElementById("Caution").innerHTML = `<span style="color: #008d09"> Create Student Success ! </span>`
+            document.getElementById("newProductAdd").value = '';
+        }
+
     }
     function deleteProduct(index) {
         productList.splice(index, 1);
@@ -72,6 +82,34 @@
         productDisplay()
         document.getElementById("formEdit").innerHTML = '';
     }
+    let studentSearch = [];
+    function showListSearch () {
+        let drawtb = '';
+        for (let i = 0; i<studentSearch.length;i++) {
+            drawtb +=
+                `
+            <tr>
+                <td>${studentSearch[i]}</td>
+                <td><button onclick = "showFormEdit(${i})">EDIT</button></td>
+                <td><button onclick = "deleteProduct(${i})">DELETE</button></td>
+            </tr>
+            `
+        } document.getElementById("productDisplay").innerHTML = drawtb;
+    }
+    function actionSearch () {
+        studentSearch.splice(0,studentSearch.length);
+        let search = document.getElementById("Search").value;
+        if (search === '') {
+            productDisplay();
+            return;
+
+        } for (let i = 0; i<productList.length;i++) {
+            if (search == productList[i]) {
+                studentSearch.push(productList[i]);
+            }
+        }showListSearch()
+    }
+
 
 
 </script>
