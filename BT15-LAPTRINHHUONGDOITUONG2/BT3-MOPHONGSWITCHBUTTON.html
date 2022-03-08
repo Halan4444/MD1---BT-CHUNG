@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT3-SWITCHBUTTON</title>
+</head>
+<body>
+<button onclick="switchButton.switchOn()">Turn On</button>
+<button onclick="switchButton.switchOff()">Turn Off</button>
+<p id="lamp"></p>
+<script>
+    class SwitchButton {
+        electricLamp;
+        constructor(electricLamp) {
+            this.electricLamp = electricLamp;
+        } connectToLamp(lamp) {
+            this.lamp = lamp
+        } switchOn() {
+            return electricLamp.turnOn();
+        }switchOff() {
+            return electricLamp.turnOff();
+        }
+    }
+    class ElectricLamp {
+        status;
+        constructor(status) {
+            this.status = status;
+        }turnOn() {
+            document.getElementById("lamp").innerHTML = ` <img src="https://denledhcm.com/wp-content/uploads/2020/12/cau-tao-bong-den-soi-dot.jpg" alt="Bóng đèn On" width = "250px" height = "150px">`
+        }
+        turnOff() {
+            document.getElementById("lamp").innerHTML = ` <img src="https://airtravelersassociation.com/wp-content/uploads/2019/10/halo-gen-la-gi.jpg" alt="Bóng đèn off" width = "250px" height = "150px">`
+        }
+    }
+    var switchButton = new SwitchButton(true);
+    var electricLamp = new ElectricLamp(true);
+
+</script>
+</body>
+</html>
