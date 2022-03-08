@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT2-CAUCHUYENADAMEVA</title>
+</head>
+<body>
+<script>
+    class Apple {
+        weight;
+        constructor(weight) {
+            this.weight=weight;
+        }
+        decrease () {
+            if (this.weight>0) {
+                this.weight--;
+            }
+        } isEmpty() {
+            if (this.weight == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } getWeight(){
+            return this.weight;
+        }
+    }
+    class Human {
+        name;
+        gender;
+        weight;
+
+        constructor(name,gender,weight) {
+            this.name  = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+        isMale(){
+            return this.weight;
+        } setGender() {
+            this.gender = gender;
+        } checkApple (Apple) {
+            return Apple.isEmpty();
+        } eat(Apple) {
+            return Apple.decrease();
+        } say() {
+            document.write(`Đi ăn cùng ` + this.name + ` nhé`+`<br>`);
+        }getName(name) {
+            return this.name;
+        } setName (name) {
+            this.name = name;
+        } getWeight () {
+            return this.weight;
+        } setWeight () {
+            this.weight = weight;
+        }
+    }
+
+    var apple = new Apple(20)
+    var male = new Human('Adam',true,60);
+    var female = new Human(`Eva`,false,45)
+    while(!apple.isEmpty()) {
+        if(apple.getWeight()%2==0){
+            male.eat(apple)
+            male.say()
+            document.write("Trọng lượng của quả táo "+apple.weight+`<br>`)
+        } else {
+            female.eat(apple);
+            female.say();
+            document.write("Trọng lượng của quả táo "+apple.weight+`<br>`)
+        }
+    }
+</script>
+</body>
+</html>
