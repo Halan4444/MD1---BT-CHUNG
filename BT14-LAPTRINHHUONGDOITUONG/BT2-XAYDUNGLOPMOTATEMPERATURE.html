@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT2-XAYDUNGLOPMOTATEMPERATURE</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    class Temperature {
+        doC;
+        constructor(doC) {
+            this.doC = doC;
+        } getDoc() {
+            return this.doC;
+        } setDoc() {
+            this.doC = doC;
+        } convertDocToKevin (){
+            return this.doC+parseFloat(273.15)
+        } convertDocToF () {
+            return (9/5*this.doC)+parseInt(32);
+        }
+    }
+    var doC = parseInt(prompt("Nhập vào độ C"));
+    var temperature = new Temperature(doC);
+    document.write(`${doC} độ C = ${temperature.convertDocToKevin()} độ Kevin<br>`);
+    document.write(`${doC} độ C = ${temperature.convertDocToF()} độ F`);
+
+</script>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT1-XAYDUNGLOPMOTAHCN</title>
+</head>
+<style>
+    h3{
+        text-align: center;
+        border-radius: 15px;
+        background-color: #4CAF50;
+        padding: 5px;
+        width: 20%;
+    }
+</style>
+<body>
+<canvas id="canvas" width=" 1600px" height="1400px" style="background-color:rgb(182,173,161)"></canvas>\
+<br>
+<script>
+    class Retangle {
+        width;
+        height;
+        constructor(width,height) {
+            this.width = width;
+            this.height = height;
+        }
+        getWidth() {
+            return this.width;
+        }
+        getHeight() {
+            return this.height;
+        } rectSquare() {
+            return this.width*this.height;
+        }rectPerimeter() {
+            return (this.width+this.height)*2;
+        }
+
+    }
+    var width = parseInt(prompt("Nhập vào cạnh a"));
+    var height = parseInt(prompt("Nhập vào cạnh b"));
+    var retangle = new Retangle(width,height);
+    document.write(`<h3>Chiều rộng là: ${width} </h3>`);
+    document.write(`<h3>Chiều cao là: ${height} </h3>`);
+    document.write(`<h3>Diện tích HCN là:${retangle.rectSquare()} </h3>`);
+    document.write(`<h3>Chu vi HCN là: ${retangle.rectPerimeter()} </h3>`);
+    var rect = document.getElementById("canvas").getContext("2d");
+    rect.beginPath();
+    rect.fillStyle = "red";
+    var x = Math.random() * window.innerWidth/2;
+    var y = Math.random() * window.innerHeight/2;
+    rect.fillRect(x,y,retangle.getWidth(),retangle.getHeight());
+    rect.fill;
+</script>
+</body>
+</html>

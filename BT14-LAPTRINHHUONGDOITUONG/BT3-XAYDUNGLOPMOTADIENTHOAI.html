@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT3-XAYDUNGLOPMOTADIENTHOAI</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<table border="2" style="border-collapse: collapse"; id="phone1">
+    <tr>
+        <td id="idGachTB"></td>
+        <td><button onclick="cucgach.sac()">SẠC</button></td>
+        <td>
+            <div id="sacCucGach"></div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3"><textarea id="manhinh" cols="30" rows="10"></textarea></td>
+    </tr>
+    <tr></tr>
+    <tr>
+        <td><input type="button" class="cucgachBtn" id="" onclick="cucgach.dangsoantin()" value="Soạn Tin"> </td>
+        <td><input type="button" class="cucgachBtn" id="" onclick="cucgach.hopthuden()" value="HT.Đến"> </td>
+        <td><input type="button" class="cucgachBtn" id="" onclick="cucgach.hopthudi()" value="HT.Đi"> </td>
+    </tr>
+    <tr>
+        <td><input type="button" class="cucgachBtn" id="" onclick="cucgach.guitin(cucda)" value="Gửi"> </td>
+        <td><input type="button" class="cucgachBtn" id="" onclick="cucgach.toggleOnOff()" value="Nguồn"> </td>
+        <td><input type="button" class="cucgachBtn" id="" onclick="cucgach.home()" value="Home"> </td>
+    </tr>
+
+    <table border="2" style="border-collapse: collapse"; id="phone2"> <br><br><br><br>
+        <tr>
+            <td id="idDaTB"></td>
+            <td><button onclick="cucda.sac();">SẠC</button></td>
+            <td>
+                <div id="sacCucDa"></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3"><textarea id="manhinh2" cols="30" rows="10"></textarea></td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td><input type="button" class="cucdaBtn"  onclick="cucda.dangsoantin()" value="Soạn Tin"> </td>
+            <td><input type="button" class="cucdaBtn"  onclick="cucda.hopthuden()" value="HT.Đến"> </td>
+            <td><input type="button" class="cucdaBtn" onclick="cucda.hopthudi()" value="HT.Đi"> </td>
+        </tr>
+        <tr>
+            <td><input type="button" class="cucdaBtn" onclick="cucda.guitin(cucgach)" value="Gửi"> </td>
+            <td><input type="button" class="cucdaBtn"  onclick="cucda.toggleOnOff()" value="Nguồn"> </td>
+            <td><input type="button" class="cucdaBtn"  onclick="cucda.home()" value="Home"> </td>
+        </tr>
+
+    </table>
+
+
+</table>
+</body>
+</html>
+<script>
+    class Phone {
+        constructor(idManHinh,phone, classBtn,battery, idSac, idThongBao,name) {
+            this.guitinnhan = [];
+            this.nhantinnhan = [];
+            this.idManHinh = idManHinh;
+            this.battery = battery;
+            this.manhinh = document.getElementById(idManHinh);
+            this.phone = document.getElementById(phone);
+            this.isOn = true;
+            this.classBtn = "Long Nguyen"+classBtn;
+            this.idSac = idSac;
+            this.idThongBao = idThongBao;
+            this.name = name;
+        }
+        sac() {
+            this.battery++
+            let self = this;
+            console.log(this.battery);
+            document.getElementById(this.idSac).style.width = this.battery + `%`;
+            document.getElementById(this.idSac).innerHTML = this.battery + `%`;
+            document.getElementById(this.idSac).style.height = 20 +`px`;
+            document.getElementById(this.idSac).style.textAlign = `center`;
+            if (this.battery<15) {
+                document.getElementById(this.idSac).style.backgroundColor = `red`;
+            } else if (this.battery>50) {
+                document.getElementById(this.idSac).style.backgroundColor = `green`;
+            } else {
+                document.getElementById(this.idSac).style.backgroundColor = `yellow`;
+            }
+            if (this.battery <100) {
+                setTimeout( function () {
+                    self.sac();
+                },100);
+            }
+        }
+        dangsoantin() {
+            this.manhinh.value = '';
+            this.manhinh.style.display = `block`
+        }
+        guitin(may) {
+            this.guitinnhan.unshift(this.manhinh.value);
+            may.nhantinnhan.unshift(this.manhinh.value);
+
+            document.getElementById(may.idThongBao).innerHTML = 'new' + may.name;
+            document.getElementById(may.idThongBao).style.backgroundColor = 'green'
+
+        }
+        hopthuden(){
+            this.manhinh.value = '';
+            this.manhinh.style.display = 'block';
+            this.manhinh.value = this.nhantinnhan;
+        }
+        hopthudi(){
+            this.manhinh.style.display = "block";
+            this.manhinh.value = this.guitinnhan;
+        }
+        home() {
+            this.manhinh.disabled = true;
+        }
+        toggleOnOff() {
+            this.isOn = !this.isOn;
+            const cucdaBtnList = document.querySelectorAll(this.classBtn)
+            cucdaBtnList.forEach(e => e.disabled = !this.isOn)
+        }
+    }
+</script>
+<script>
+    var cucgach = new Phone("manhinh", "phone1", "cucgachBtn", 5, "sacCucGach", 'idGachTB', 'CG');
+    var cucda = new Phone("manhinh2", "phone2", "cucdaBtn", 30, "sacCucDa", 'idDaTB', 'CĐ');
+</script>
