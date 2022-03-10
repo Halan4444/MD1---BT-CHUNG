@@ -5,7 +5,8 @@
     <title>TH3-FunnyCircle</title>
 </head>
 <body>
-<canvas id="myCanvas" width="1368px" height="768px" style="border:2px solid #595959;"></canvas>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:2px solid #595959;
+display: block;margin: auto auto; box-shadow: 10px 10px 10px black"></canvas>
 </body>
 </html>
 <script>
@@ -35,10 +36,31 @@
         ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
         ctx.fillStyle = color;
         ctx.fill();
+
+
     }
     function createMultipleCircle() {
         for(let i=0; i<30;i++) {
             createCircle();
+
         }
-    } createMultipleCircle()
+    }
+    function clearScreen() {
+        var ctx = document.getElementById("myCanvas").getContext("2d");
+        ctx.beginPath();
+        ctx.fillStyle = "white";
+        ctx.rect(0, 0, 1368, 800);
+        ctx.fill();
+    }
+    var start;
+    function Run () {
+        createMultipleCircle();
+        setTimeout(Run,300);
+
+    }
+
+   Run();
+   setInterval(clearScreen,300)
+
+
 </script>

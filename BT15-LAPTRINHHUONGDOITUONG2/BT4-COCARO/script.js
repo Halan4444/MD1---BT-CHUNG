@@ -1,8 +1,8 @@
 const VALUE_EMPTY = 1;
 const VALUE_X = 2;
 const VALUE_O = 3;
-const DEFAULT_COLS = 10;
-const DEFAULT_ROWS = 10;
+const DEFAULT_COLS = 20;
+const DEFAULT_ROWS = 20;
 const DEFAULT_CELL_SIZE = 40;
 
 function Cell(x, y) {

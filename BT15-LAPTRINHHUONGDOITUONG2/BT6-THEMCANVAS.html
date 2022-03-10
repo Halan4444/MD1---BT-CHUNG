@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BTCANVAS</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1200px" height="800px" style="border:2px solid #595959;"></canvas>
+</body>
+</html>
+<script>
+
+    function createCircle(x,y,radius){
+        var ctx = document.getElementById("myCanvas").getContext("2d");
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, 2 * Math.PI);
+        ctx.strokeStyle = 'red';
+        ctx.stroke()
+    }
+    function createRegtangle(x,y,w,h){
+        var ctx = document.getElementById("myCanvas").getContext("2d");
+        ctx.beginPath();
+        ctx.rect(x,y,w,h)
+        ctx.strokeStyle = 'red';
+        ctx.stroke()
+    }
+
+    createCircle(100,150,50)
+    createRegtangle(0,0,200,100)
+
+    createCircle(1200-100,150,50)
+    createRegtangle(1000,0,200,100)
+
+    createCircle(100,800-150,50)
+    createRegtangle(0,800-100,200,100)
+
+    createCircle(1200-100,800-150,50)
+    createRegtangle(1000,800-100,200,100)
+
+</script>

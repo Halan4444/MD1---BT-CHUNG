@@ -17,7 +17,7 @@
         </td>
     </tr>
     <tr>
-        <td colspan="3"><textarea id="manhinh" cols="30" rows="10"></textarea></td>
+        <td colspan="3"><textarea id="manhinh" cols="50" rows="10"></textarea></td>
     </tr>
     <tr></tr>
     <tr>
@@ -40,7 +40,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="3"><textarea id="manhinh2" cols="30" rows="10"></textarea></td>
+            <td colspan="3"><textarea id="manhinh2" cols="50" rows="10"></textarea></td>
         </tr>
         <tr></tr>
         <tr>
@@ -61,6 +61,7 @@
 </body>
 </html>
 <script>
+    var count = 0;
     class Phone {
         constructor(idManHinh,phone, classBtn,battery, idSac, idThongBao,name) {
             this.guitinnhan = [];
@@ -100,11 +101,12 @@
             this.manhinh.value = '';
             this.manhinh.style.display = `block`
         }
+
         guitin(may) {
             this.guitinnhan.unshift(this.manhinh.value);
             may.nhantinnhan.unshift(this.manhinh.value);
-
-            document.getElementById(may.idThongBao).innerHTML = 'new' + may.name;
+            count++;
+            document.getElementById(may.idThongBao).innerHTML = 'You Have '+count+' Messages From '+ may.name;
             document.getElementById(may.idThongBao).style.backgroundColor = 'green'
 
         }

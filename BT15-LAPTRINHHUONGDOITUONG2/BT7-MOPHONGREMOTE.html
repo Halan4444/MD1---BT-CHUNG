@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="BT7-CSS.css">
+
+</head>
+<style>
+    *{
+        color: white;
+        background-image: linear-gradient(to right, #000000, #1f232c);
+    }
+    button {
+        border-radius: 20%;
+        box-sizing: border-box;
+        margin: 5px 10px;
+        font-size: 20px;
+    }
+
+</style>
+<body>
+<table border="1">
+    <tr>
+        <th colspan="3"><button onclick="remote.keyOn()">On</button><button onclick="remote.keyOff()">Off</button> </th>
+    </tr>
+    <tr>
+        <td><button onclick="remote.kenh1()">1</button> </td>
+        <td><button onclick="remote.kenh2()">2</button> </td>
+        <td><button onclick="remote.kenh3()">3</button> </td>
+    </tr>
+    <tr>
+        <td><button onclick="remote.kenh4()">4</button> </td>
+        <td><button onclick="remote.kenh5()">5</button> </td>
+        <td><button onclick="remote.kenh6()">6</button> </td>
+    </tr>
+    <tr>
+        <td><button onclick="remote.kenh7()">7</button> </td>
+        <td><button onclick="remote.kenh8()">8</button> </td>
+        <td><button onclick="remote.kenh9()">9</button> </td>
+    </tr>
+    <tr>
+        <td><button onclick="remote.kenh0()">0</button> </td>
+        <td><button onclick="remote.volumeDown()">-</button> </td>
+        <td><button onclick="remote.volumeUp()">+</button> </td>
+    </tr>
+</table>
+<br>
+<br>
+    <table>
+        <table border="6" style="width: 720px; height: 540px; ">
+        <th>
+            SMART LONG TIVI
+            <p id="tiviDisplay"></p>
+            <p id="volumeDisplay"></p>
+        </th>
+        </table>
+    </table>
+
+
+</table>
+</body>
+</html>
+<script>
+    class Remote {
+        status;
+        constructor(status) {
+            this.status= status;
+        }
+        keyOn(){
+            this.status = true;
+            tivi.on();
+        }keyOff() {
+            this.status = false;
+            tivi.off()
+        }kenh1() {
+            this.status = true;
+            tivi.kenh1();
+        }kenh2() {
+            this.status = true;
+            tivi.kenh2();
+        }kenh3() {
+            this.status = true;
+            tivi.kenh3();
+        }kenh4() {
+            this.status = true;
+            tivi.kenh4();
+        }kenh5() {
+            this.status = true;
+            tivi.kenh5();
+        }kenh6() {
+            this.status = true;
+            tivi.kenh6();
+        }kenh7() {
+            this.status = true;
+            tivi.kenh7();
+        }kenh8() {
+            this.status = true;
+            tivi.kenh8();
+        }kenh9() {
+            this.status = true;
+            tivi.kenh9();
+        }kenh0() {
+            this.status = true;
+            tivi.kenh0();
+        }volumeDown() {
+            this.status = true;
+            tivi.volumeDown();
+
+        }volumeUp() {
+            this.status = true;
+            tivi.volumeUp();
+        }
+    }
+    class Tivi {
+        status;
+        constructor(status) {
+            this.status = status;
+        } on() {
+            this.status = 'on';
+            document.getElementById("tiviDisplay").innerHTML =
+                `<image src="IMG/ANHGOC.jpg" width="800px" height="540px">`
+        } off() {
+            this.status = 'off';
+            document.getElementById("tiviDisplay").innerHTML =
+                `<image src="IMG/ANHGOC.jpg" width="800px" height="540px" style="filter: brightness(25%)">`
+        }kenh1(){
+            if(this.status == `off`) {
+                alert("Tivi not avaible");
+            } else {
+                document.getElementById("tiviDisplay").innerHTML =
+                    `<img width="600px" height="540px"
+                 src="IMG/H0.jpg">
+                 </img>`
+            }
+        }kenh2(){
+        if(this.status == `off`) {
+            alert("Tivi not avaible");
+        } else {
+            document.getElementById("tiviDisplay").innerHTML =
+                `<img width="540px" height="540px"
+                 src="IMG/H2.jpg">
+                 </img>`
+        }
+        } kenh3(){
+            if(this.status == `off`) {
+                alert("Tivi not avaible");
+            } else {
+                document.getElementById("tiviDisplay").innerHTML =
+                    `<img width="540px" height="540px"
+                 src="IMG/H3.png">
+                 `
+            }
+        } kenh4(){
+            if(this.status == `off`) {
+                alert("Tivi not avaible");
+            } else {
+                document.getElementById("tiviDisplay").innerHTML =
+                    `<img width="540px" height="540px"
+                 src="IMG/H4.jpg">
+                 `
+            }
+        }kenh5(){
+            if(this.status == `off`) {
+                alert("Tivi not avaible");
+            } else {
+                document.getElementById("tiviDisplay").innerHTML =
+                    `<img width="540px" height="540px"
+                 src="IMG/H5.jpg">
+                 `
+            }
+        }kenh6(){
+            if(this.status == `off`) {
+                alert("Tivi not avaible");
+            } else {
+                document.getElementById("tiviDisplay").innerHTML =
+                    `<img width="540px" height="540px"
+                 src="IMG/H6.jpg">
+                 `
+            }
+        }kenh7(){
+            if(this.status == `off`) {
+                alert("Tivi not avaible");
+            } else {
+                document.getElementById("tiviDisplay").innerHTML =
+                    `<img width="540px" height="540px"
+                 src="IMG/H7.png">
+                 `
+            }
+        }kenh8(){
+            if(this.status == `off`) {
+                alert("Tivi not avaible");
+            } else {
+                document.getElementById("tiviDisplay").innerHTML =
+                    `<img width="540px" height="540px"
+                 src="IMG/H8.png">
+                 `
+            }
+        }kenh9(){
+            if(this.status == `off`) {
+                alert("Tivi not avaible");
+            } else {
+                document.getElementById("tiviDisplay").innerHTML =
+                    `<img width="540px" height="540px"
+                 src="IMG/H9.png">
+                 `
+            }
+        }kenh0(){
+            if(this.status == `off`) {
+                alert("Tivi not avaible");
+            } else {
+                document.getElementById("tiviDisplay").innerHTML =
+                    `<img width="800px" height="540px"
+                 src="IMG/H1.jpg">
+                 `
+            }
+        }
+        volumeDown(){
+            if(this.status == `off`) {
+                alert("Tivi not avaible");
+            } else {
+                if (volume>0) {
+                    volume--;
+                    document.getElementById("volumeDisplay").innerHTML = volume;
+                } else {
+                    volume = volume;
+                }
+            }
+        }volumeUp(){
+            if(this.status == `off`) {
+                alert("Tivi not avaible");
+            } else {
+                if (volume<100) {
+                    volume++;
+                    document.getElementById("volumeDisplay").innerHTML = volume;
+                } else {
+                    volume = volume;
+                }
+            }
+        }
+    }
+    var volume = 100;
+    console.log(volume)
+    var remote = new Remote(true);
+    var tivi = new Tivi (true)
+</script>

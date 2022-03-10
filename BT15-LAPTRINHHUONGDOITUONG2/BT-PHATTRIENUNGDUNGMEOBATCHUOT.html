@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT5-UNGDUNGMEOBATCHUOT</title>
+</head>
+<body>
+<script>
+    var i=0;
+    class Rat {
+        name;
+        weight;
+        speed;
+        status;
+        constructor(name, weight, speed, status) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            this.status = status;
+        }
+        getName() {
+            return this.name;
+        }
+        setName() {
+            this.name = prompt("Nhập vào tên con chuột");
+        }
+        getWeight() {
+            return this.weight;
+        }
+        setWeight() {
+            this.weight = +prompt("Nhập vào trọng lượng con chuột") ;
+        }
+        getSpeed() {
+            return this.speed;
+        }
+        setSpeed() {
+            this.speed = +prompt("Nhập vào tốc độ con chuột");
+        }
+        getStatus() {
+            return this.status;
+        }
+        setStatus() {
+            this.status = prompt("Nhập vào trạng thái con chuột (Song hay Chet)");
+        }
+        sound () {
+            document.write('Chit Chit'+'<br>');
+        }
+    }
+    class Cat {
+        name;
+        weight;
+        speedMax;
+        constructor(name, weight, speedMax) {
+            this.name = name;
+            this.weight = weight;
+            this.speedMax = speedMax;
+        }
+        sound() {
+            document.write(`Meo Meo`+`<br>`);
+        } catch() {
+            document.write("Mèo "+this.name+" đã nhắm vào con chuột "+rat.name+'<br>');
+            document.write("Mèo "+this.name+" bắt đầu duổi chuột  "+rat.name+'<br>')
+            if(this.speedMax>rat.speed) {
+                i++
+                document.write("Mèo "+this.name+" đã bắt được con chuột "+ rat.name+'<br>');
+                this.sound();
+                document.write("Mèo "+this.name+" đã bắt được "+i+ " con chuột "+ rat.name+'<br>');
+                this.eat();
+            } else {
+                document.write("Mèo "+this.name+" quá béo nên không bắt được con chuột này"+`<br>`);
+                document.write("Chuột "+rat.name+" đã chạy thoát thành công"+`<br>`);
+                rat.sound();
+            }
+        } eat() {
+            if (rat.status === "Song"|| rat.status === "song") {
+                this.weight += rat.weight;
+                this.speedMax--;
+                document.write("Mèo "+ this.name + " đã ăn thịt chuột "+rat.name+"<br>")
+                document.write("Cân nặng của mèo bây giờ là "+ this.weight + "<br>")
+                document.write("Tốc độ tối đa của mèo bây giờ là "+ this.speedMax + "<br>");
+            } else {
+                document.write("Con chuột này đã chết không thể ăn"+`<br>`);
+            }
+        }
+
+    }
+    var rat = new Rat();
+    var cat = new Cat("Tom",20,10);
+    function game() {
+        rat.setName();
+        rat.setSpeed();
+        rat.setWeight();
+        rat.setStatus();
+        cat.catch()
+    }
+    var a = parseInt(prompt("Nhập số con chuột có trong trò chơi"));
+
+    for(var j=0 ; j<a; j++) {
+        if (j ===0 ) {
+            document.write("Có "+a+" con chuột ở trong nhà của mèo"+ cat.name+`<br>`);
+        }alert("Con chuột thứ "+(j+1));
+        game()
+        document.write("<br>")
+    }
+
+
+</script>
+</body>
+</html>
